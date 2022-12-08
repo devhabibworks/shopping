@@ -6,7 +6,7 @@ class Product {
   var description;
   var price;
   var quantity;
-  var image;
+  dynamic image;
 
   Product(
       {this.id,

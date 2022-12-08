@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
           "home": (context) => const HomeScreen(),
           "add-product": (context) => const AddProductScreen(),
         },
-        initialRoute: isLogedIn ? "add-product" : "home",
+        initialRoute: isLogedIn ? "home" : "home",
       ),
     );
   }
