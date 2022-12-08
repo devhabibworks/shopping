@@ -11,11 +11,13 @@ class ProductProvider with ChangeNotifier {
   }
 
   addProuct(Product product) async {
-    await prodcutRef.add({product.toJson()});
+    String id = prodcutRef.doc().id;
+    product.id = id;
+    return await prodcutRef.doc(id).set(product.toJson());
   }
 
-  uploadProuct(Product product) async {
-    await prodcutRef.doc(product.id).set({product.toJson()});
+  updateProuct(Product product) async {
+    await prodcutRef.doc(product.id).set(product.toJson());
   }
 
   deleteProduct(String id) async {

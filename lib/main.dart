@@ -11,14 +11,16 @@ import 'package:shopping/screen/regester/regester_screen.dart';
 
 void main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-      options: const FirebaseOptions(
-          apiKey: "AIzaSyDt5RWWBb0Gq5rwsttDhupeEl7Eklt6GZA",
-          authDomain: "shopping-83301.firebaseapp.com",
-          projectId: "shopping-83301",
-          storageBucket: "shopping-83301.appspot.com",
-          messagingSenderId: "26699458762",
-          appId: "1:26699458762:web:6b6e32cb7cef8ae9b52c33"));
+  await Firebase.initializeApp();
+  // await Firebase.initializeApp(
+  //     options: const FirebaseOptions(
+  //         apiKey: "AIzaSyDt5RWWBb0Gq5rwsttDhupeEl7Eklt6GZA",
+  //         authDomain: "shopping-83301.firebaseapp.com",
+  //         projectId: "shopping-83301",
+  //         storageBucket: "shopping-83301.appspot.com",
+  //         messagingSenderId: "26699458762",
+  //         appId: "1:26699458762:web:6b6e32cb7cef8ae9b52c33"));
+
   User? user = FirebaseAuth.instance.currentUser;
 
   runApp(MyApp(isLogedIn: user == null));
@@ -47,7 +49,7 @@ class MyApp extends StatelessWidget {
           "home": (context) => const HomeScreen(),
           "add-product": (context) => const AddProductScreen(),
         },
-        initialRoute: isLogedIn ? "home" : "login",
+        initialRoute: isLogedIn ? "add-product" : "home",
       ),
     );
   }

@@ -6,15 +6,23 @@ class Product {
   var description;
   var price;
   var quantity;
+  var image;
 
-  Product({this.id, this.name, this.description, this.price, this.quantity});
+  Product(
+      {this.id,
+      this.name,
+      this.description,
+      this.price,
+      this.quantity,
+      this.image});
 
   Product.fromJson(Map<String, dynamic> json)
       : id = json["id"],
         name = json["name"],
         description = json["description"],
         price = json["price"],
-        quantity = json["quantity"];
+        quantity = json["quantity"],
+        image = json["image"];
 
   Product.fromDocument(DocumentSnapshot doc) {
     final data = doc.data()! as Map<String, dynamic>;
@@ -22,6 +30,7 @@ class Product {
     name = data["name"];
     description = data["description"];
     price = data["price"];
+    image = data["image"];
     quantity = data["quantity"];
   }
 
@@ -31,6 +40,7 @@ class Product {
       "name": name,
       "description": description,
       "price": price,
+      'image': image,
       "quantity": quantity,
     };
   }

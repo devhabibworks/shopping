@@ -37,10 +37,17 @@ dependencies:
 
   #firebase
 
-  cloud_firestore:
-  firebase_auth:
-  firebase_core:
-  firebase_storage:
+  # cloud_firestore:
+  # firebase_auth:
+  # firebase_core:
+  # firebase_storage:
+  firebase_auth: ^4.0.2
+  #firebase_auth_web: ^5.0.2
+  firebase_core: ^2.1.0
+
+  firebase_database: ^10.0.2
+  firebase_storage: ^11.0.2
+  cloud_firestore: ^4.0.2
 
 dev_dependencies:
   flutter_test:
